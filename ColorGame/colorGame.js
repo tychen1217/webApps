@@ -14,13 +14,16 @@ init();
 
 function init() {
     for (var i = 0; i < modeButton.length; i++) {
+        // add click listeners for mode
         modeButton[i].addEventListener("click", clickMode);
     }
     for(var i = 0; i < squares.length; i++) {
-        // add click listeners
+        // add click listeners for square
         squares[i].addEventListener("click", compareColor);
     }
+    // start the game
     resetGame();
+    // set reset button
     resetButton.addEventListener("click", resetGame);
 }
 
@@ -45,7 +48,6 @@ function clickMode() {
 
 function resetGame() {
     messageDisplay.textContent = "";
-
     if (nightmare) {
         colors = generateNightmareColors(numSquares);
     }
@@ -80,22 +82,22 @@ function generateNightmareColors(num) {
     var arr = [];
     var RGB = [];
 
+    // generate one random color and store in RGB
     for(var i = 0; i < 3; i++){
         RGB.push(Math.floor(Math.random() * 256));
     }
-
+    // pick one of [R,G,B] to vary
     var pickOneRGB = Math.floor(Math.random() * 3);
 
+    // Make the color slightly different
     for(var i = 0; i < num; i++){
         var tuneColor = Math.floor(Math.random() * 101);
         RGB[pickOneRGB] = RGB[pickOneRGB] - 50 + tuneColor;            
-
         var colorString = "rgb(" + RGB[0] + ", " + RGB[1] + ", " + RGB[2] + ")"
         arr.push(colorString);
     }   
     return arr;
 }
-
 
 function randomColor() {
     var red = Math.floor(Math.random() * 256);
@@ -129,10 +131,3 @@ function changeColor(color) {
         squares[i].style.backgroundColor = color;
     }
 }
-
-
-
-
-
-
-
