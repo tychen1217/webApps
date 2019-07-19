@@ -104,7 +104,7 @@ function randomColor() {
     var blue = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
 
-    return "rgb(" + red + ", " + blue + ", " + green + ")";
+    return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
 function pickColor() {
