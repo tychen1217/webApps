@@ -1,6 +1,6 @@
 # webApps
 
-The followings are the web Applications I wrote using Javascript.
+My javascript web projects:
 
 <a href="https://tychen1217.github.io/webApps/ColorGame">Guess The Right Color</a>
 <br>
